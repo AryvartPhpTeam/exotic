@@ -22,10 +22,7 @@
                 <h3>customer service</h3>
                 </div>
                 <div class="fot-cnt">
-                 <ul class="list-unstyled">
-                   <li><a href="#">Contact Us</a></li>
-                   <li><a href="#">FAQ’s</a></li>
-                 </ul>
+                 <?php wp_nav_menu(array('menu' => 'footer_customer', 'menu_class' => 'list-unstyled')); ?>
                 </div>
             </div> 
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 vertical-border">
@@ -33,12 +30,7 @@
                 <h3>information</h3>
                 </div>
                 <div class="fot-cnt">                
-                 <ul class="list-unstyled">
-                   <li><a href="#">About Us</a></li>
-                   <li><a href="#">Privacy & Security</a></li>
-                   <li><a href="#">Terms & Conditions</a></li>
-                   <li><a href="#">Reservations</a></li>
-                 </ul>
+                  <?php wp_nav_menu(array('menu' => 'footer_information', 'menu_class' => 'list-unstyled')); ?>
                 </div>
             </div> 
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
