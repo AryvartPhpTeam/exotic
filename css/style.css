@@ -1,0 +1,508 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+    font-family: 'impactregular';
+    src: url('../fonts/impact-webfont.eot');
+    src: url('../fonts/impact-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/impact-webfont.woff2') format('woff2'),
+         url('../fonts/impact-webfont.woff') format('woff'),
+         url('../fonts/impact-webfont.ttf') format('truetype'),
+         url('../fonts/impact-webfont.svg#impactregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'haettenschweilerregular';
+    src: url('../fonts/haettenschweiler-webfont.eot');
+    src: url('../fonts/haettenschweiler-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/haettenschweiler-webfont.woff2') format('woff2'),
+         url('../fonts/haettenschweiler-webfont.woff') format('woff'),
+         url('../fonts/haettenschweiler-webfont.ttf') format('truetype'),
+         url('../fonts/haettenschweiler-webfont.svg#haettenschweilerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {	
+	 font-family: 'gillsans_lightregular';
+   	 src: url('../fonts/ufonts.com_gillsans-light-webfont.eot');
+     src: url('../fonts/ufonts.com_gillsans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ufonts.com_gillsans-light-webfont.woff2') format('woff2'),
+         url('../fonts/ufonts.com_gillsans-light-webfont.woff') format('woff'),
+         url('../fonts/ufonts.com_gillsans-light-webfont.ttf') format('truetype'),
+         url('../fonts/ufonts.com_gillsans-light-webfont.svg#gillsans_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family:'GillSans-Bold';
+	src: url('../fonts/GillSans-Bold_gdi.eot');
+	src: url('../fonts/GillSans-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/GillSans-Bold_gdi.woff') format('woff'),
+		url('../fonts/GillSans-Bold_gdi.ttf') format('truetype'),
+		url('../fonts/GillSans-Bold_gdi.svg#GillSans-Bold') format('svg');
+	font-weight: 5;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-2666;
+}
+
+body{
+	margin:0;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+.header-block {
+    background-color:  #B30100;
+    padding-bottom: 12px;
+    margin: 0;
+}
+.logo img{
+  margin:0 auto;
+  display: block;
+  max-width:120px;
+ }
+.menu{margin-top:40px;}
+.menu .navbar-default {
+    background: none;
+    border: none;
+}
+.menu .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover{
+	background-color: transparent;
+	color: #FFF;
+	border-bottom:4px solid #fff;
+}
+.menu .navbar-default .navbar-nav > li > a {
+color: #fff;
+    font-family:'gillsans_lightregular','Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, Arial, sans-serif !important;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: lighter;
+	outline:none;
+	background:tranasprent;
+	
+}
+.menu .navbar-default .navbar-nav > li > a:hover {
+	background-color: transparent;
+	color: #FFF;
+	border-bottom:4px solid #fff;
+}
+.menu .navbar-nav > li {margin-right: 25px;}
+.cal h1{
+font-size: 22px;
+    color: #fff;
+    letter-spacing: 5.2px;    
+	font-family:'GillSans-Bold','gillsans_lightregular', Gill Sans MT;
+	font-weight: 300;
+}
+.feature {
+    margin-top: 30px;
+}
+.feature h1 {
+    text-align: center;
+    font-size: 30pt;
+	margin:0px;
+    text-transform: uppercase;
+    font-weight: bold;
+	letter-spacing:1px;
+    color: #616161;
+    padding-bottom: 5px;
+	font-family:'impactregular', Impact, Haettenschweiler, Franklin Gothic Bold, Arial Black, sans-serif;
+}
+.exotic h3 {
+    font-size: 20pt;
+    text-transform: uppercase;
+    color: #595858;
+	font-family:'impactregular', Impact, Haettenschweiler, Franklin Gothic Bold, Arial Black, sans-serif;
+	margin-top:0;
+}
+.exotic h3 a{text-decoration:none; color:#595858;}
+.exotic h3 a:hover{color: #cb0909;}
+.exotic h4 {
+    font-size: 15pt;
+	margin-top: 8px;
+    text-transform: uppercase;
+    color: #595858;
+	font-family: 'haettenschweilerregular',Impact;
+}
+.exotic .btn-default {
+	color: #fff;
+    background-color: #cb0909;
+    border-color: #cb0909;
+	 font-size: 14pt;
+    text-transform: uppercase;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+	border-radius: 0;
+	letter-spacing:0.8px;
+}
+.exotic .btn-default:hover {
+	color: #cb0909;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.exotic .btn {
+    padding:08px 12px !important;
+}
+.exotic {
+	border: 8px solid #d2d2d2;
+    padding: 20px 20px;
+    padding-bottom: 75px;
+    margin-top: 40px;
+	margin-right: 24px;
+	margin-bottom:25px;
+}
+.exo-int {
+    position: relative;
+    display: block;
+}
+.exo-int img {
+position: absolute;
+width: 329px;
+height: auto;
+top: 8px;
+}
+.footer-block {
+	background: url(../images/footer_bg.jpg) no-repeat rgba(0,0,0,0.5);
+	background-size:cover;
+	margin-top: 20px;
+}
+.fot-h {padding: 0 0 0 12px; }
+.fot-h h3{
+	color: #fff;
+   	font-family:'GillSans-Bold','gillsans_lightregular', Gill Sans MT;
+    text-transform: uppercase;
+    font-size: 18px;		
+	line-height: 50px;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+.fot-cnt01 {
+    margin-top: 23px;
+}
+/*.padrgt0{padding-right:0;}
+.padlft0{padding-left:0;}*/
+.fot-cnt {
+	
+	padding: 15px 15px;
+	color: #fff;
+	
+	padding-left: 26px;
+	min-height: 225px;
+	
+}
+.vertical-border
+{
+	border-right:1px solid #fff;
+}
+
+.footer-overlay
+{
+	background:url(../images/footer_overlay.png) repeat-x;
+}
+.fot-cnt p{
+	color: #fff;
+  	font-family:'gillsans_lightregular', Gill Sans MT;
+	font-size: 16px;
+line-height: 25px;	
+}
+
+.fot-cnt ul li{
+	color: #fff;
+   	font-family:'gillsans_lightregular', Gill Sans MT;
+    font-size: 17px;
+	line-height: 23px;	
+}
+.form-control
+{
+	font-family:'GillSans-Bold','gillsans_lightregular', Gill Sans MT;
+}
+.new {
+    border-left: 1px solid #fff;
+}
+.fot-cnt01 .input-group-btn:last-child > .btn{ 
+background-color: #333539;
+border-color: #333539;
+color: #fff;
+border-radius: 0;
+outline: none;
+}
+.fot-cnt01 .input-group .form-control:first-child{
+	border-radius: 0;
+}
+.fot-cnt01 .fa{
+	font-size: 28px;
+	color: #fff;
+}
+.martop20{
+	margin-top:20px;
+}
+.footer-bottom {background-color:#d2d2d2;}
+.fot-cnt ul li a{color: #fff; text-decoration: none; font-size:17px; line-height: 28px;}
+.fot-cnt ul li a:hover {color: #c30a09;}
+.fot-cnt02 ul li a{color: #fff; text-decoration: none;line-height: 28px;}
+.fot-cnt02 ul li a:hover {color: #000;}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+}
+.fot-cnt01 .fa:hover {color: #333539;}
+.head-line {
+border-collapse: separate;
+color: #C30A09;
+display: table;
+font-family: Merriweather;
+font-size: 1px;
+line-height: 0.25;
+table-layout: auto;
+text-align: center;
+white-space: nowrap;
+letter-spacing: 38px;
+margin-top: -145px;
+position: absolute;
+}
+.head-line:before{
+  border-top: 2px double #e07f7f;
+  content: '';
+  display: table-cell;
+  width: 50%;
+}
+.head-line:after{
+  border-top: 2px double #e07f7f;
+  content: '';
+  display: table-cell;
+  width: 50%;
+}
+.head-line:before{
+  border-top-style: solid;
+}
+.head-line:after {
+  border-top-style: solid;
+}
+.footer-bottom p{
+	text-align: center;
+    font-size: 15px;
+    margin-bottom: 0;
+    padding: 10px;
+    color: #131313;
+    letter-spacing: 0.5px;
+	font-family:'gillsans_lightregular', Gill Sans MT;
+	padding-bottom: 7px;
+}
+/* vino */
+.banner-block-img{background:url("../images/car-inner1.jpg") #444 no-repeat; background-size:100%; height:100%; width:100%;}
+.lampo{max-width:60px; float:left; margin-right:20px;}
+.lompo1 h3 { padding:5px 0px; font-size:40px; text-transform: uppercase; margin:10px; display:block;
+    font-weight:700;
+    color: #fff;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;}
+.lompo1 p{color:#fff; font-size:20px; font-family: Arial, sans-serif; line-height:15px;}
+.lompo1 {padding:40px 0px;}
+.exotic1{ margin-top: 35px;
+}
+.car-title-box{background:#C30A09;font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;font-size:28px;color:#fff;text-transform:uppercase;padding:5px; }
+.exotic1 .btn-default {
+    color: #FFF;
+    background-color: #CB0909;
+    border-color: #CB0909;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-family: Impact,Haettenschweiler,"Franklin Gothic Bold","Arial Black",sans-serif;
+    border-radius: 0px;
+    letter-spacing: 0.8px;}
+	.car-info p{
+	font-size:16px;font-family: Arial, sans-serif; line-height:22px; padding:10px;}
+	.exotic2{text-align:center;}
+	.exotic2 .btn-default {
+    color: #FFF;
+    background-color: #CB0909;
+    border-color: #CB0909;
+    font-size: 20pt;
+    text-transform: uppercase;
+    font-family: Impact,Haettenschweiler,"Franklin Gothic Bold","Arial Black",sans-serif;
+    border-radius: 0px;
+    letter-spacing: 0.8px;}
+	.car-info p{line-height:38px;
+	font-size:16px;font-family: Arial, sans-serif; line-height:38px; padding;10px;}
+	
+#lightbox .modal-content {
+    display: inline-block;
+    text-align: center;   
+}
+
+#lightbox .close {
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 25, 25);
+    padding: 5px 8px;
+    border-radius: 30px;
+    border: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    top: -15px;
+    right: -55px;
+    
+    z-index:1032;
+}
+.car_models h3{padding:5px 0px; font-size:30px; text-transform: uppercase; margin:10px; display:block;
+    font-weight:700;
+    color: #444;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;}
+	.cars-lampo{margin-top:40px;}
+	
+	/* contact */
+	
+.banner-contact{ background:url(../images/contact.jpg) no-repeat; background-size:100% 100%;}
+.cont-in h1{ color:#fff; margin-top:70px; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;}
+.cont-in p{ color:#fff; padding-top:15px; font-size:16px; font-family:'gillsans_lightregular', Gill Sans MT;}
+.contact-details h2{ font-size:30px; text-align:left; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif; padding:10px 0;}
+.contact-details p{ font-size:14px; text-align:right; padding-top:30px; font-family:'gillsans_lightregular', Gill Sans MT;}
+.contact-details p a{ text-decoration:none;}
+.con-loction, .con-loction1, .con-loction2{ margin-top:50px;}
+.con-loction p{ padding:10px 0; color:#fff; text-transform:uppercase; font-size:18px; font-family:'gillsans_lightregular', Gill Sans MT;}
+.con-loction1 p{ padding:20px 0; color:#fff; font-size:18px; font-family:'gillsans_lightregular', Gill Sans MT;}
+.con-loction2 p{ padding:15px 0; color:#fff; text-transform:uppercase; font-size:18px; font-family:'gillsans_lightregular', Gill Sans MT;}
+.drop-message h2{font-size:50px; margin-top:40px; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif; padding:10px 0;}
+.drop-message h4{font-family:'gillsans_lightregular', Gill Sans MT;}
+.ft{ margin:0 !important; height:34px !important;}
+
+/* cars */
+.cars-banner{ background:url(../images/cars.jpg) no-repeat; background-size:100% 100%;}
+.cars h2{text-align:center; margin-top:60px; color:#fff; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif; font-size:30pt; text-transform:uppercase;}
+.car-line{ max-width:200px; border-bottom:1px solid #fff; margin-bottom:40px;}
+.cr-box{ border-radius:5px; height:60px; background:none; border:2px solid #fff;}
+.cars-box{ border:1px solid #ededed;}
+.cars-box:hover{ border:1px solid #CB0909;}
+.cars-box h2{ font-size: 20pt; text-transform:uppercase; color:#616161; text-align:center; font-family: "impactregular",Impact,Haettenschweiler,Franklin Gothic Bold,Arial Black,sans-serif;}
+.cars{ margin-bottom:60px;}
+.cars-box img { padding: 0 6px;}
+.exotic3 .btn-default {
+ color: #FFF;
+background-color: #CB0909;
+border-color: #CB0909;
+font-size: 15pt;
+text-transform: uppercase;
+font-family: Impact,Haettenschweiler,"Franklin Gothic Bold","Arial Black",sans-serif;
+border-radius: 0px;
+letter-spacing: 0.8px;
+padding: 15px 70px;
+margin-top: 30px;}
+.ht-border{ max-width:300px; }
+.cars-box span{ padding:0 10px;font-size: 15pt; color:#666; font-family: "impactregular",Impact,Haettenschweiler,Franklin Gothic Bold,Arial Black,sans-serif;}
+.cars-box p{ padding:18px 12px 0; font-family:'gillsans_lightregular', Gill Sans MT; font-size:16px;}
+.re-mo{ text-align:right; padding:0 12px !important; }
+.re-mo a{color:#CB0909; text-decoration:none;}
+.cars-model{ margin-top:70px;}
+.cars-model1{margin-bottom:40px;}
+.page-nation{ float:right;}
+.page-nation ul li{  list-style-type:none; float:left; padding:0 7px; }
+.page-nation ul li a{ color:#fff; font-size:20px; font-family:'gillsans_lightregular', Gill Sans MT; width:40px; height:40px; padding:7px 15px; background:#CB0909; text-decoration:none;}
+.page-na{ padding-bottom:30px;}
+.car-rental{ background:url(../images/cars-footer.png) no-repeat; background-size:100% 100%; padding-top:40px; padding-bottom:40px;}
+ .exo1 .btn-default {
+ color: #444;
+background-color: #fff;
+border-color: #fff;
+font-size: 16pt;
+text-transform: uppercase;
+font-family: Impact,Haettenschweiler,"Franklin Gothic Bold","Arial Black",sans-serif;
+border-radius: 0px;
+letter-spacing: 0.8px;
+padding: 10px 34px;
+margin-top: 10px;}
+ .exo2 .btn-default {
+ color: #FFF;
+background-color: #CB0909;
+border-color: #CB0909;
+font-size: 16pt;
+text-transform: uppercase;
+font-family: Impact,Haettenschweiler,"Franklin Gothic Bold","Arial Black",sans-serif;
+border-radius: 0px;
+letter-spacing: 0.8px;
+padding: 10px 22px;
+margin-top: 10px;}
+.get h2{ color:#fff;
+  font-family: 'gillsans_lightregular', Gill Sans MT;
+}
+/*reservation */
+.marbtm30{margin-bottom: 30px;}
+.separator{
+  background-color: #B30100;
+  height: 1px;
+  width: 130px;
+  margin: 2px auto 10px;
+  display: block;
+  position: relative;
+}
+.reservation {padding: 40px 0;border-bottom: 1px dotted #DEDEDE;
+padding-bottom: 18px;}
+.vation {
+text-align: left;
+font-size: 22pt;
+margin: 0px;
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing: 1px;
+color: #505050;
+padding-bottom: 8px;
+font-family: "impactregular",Impact,Haettenschweiler,Franklin Gothic Bold,Arial Black,sans-serif;
+}
+.vation2 {
+text-align: left;
+font-size: 18pt;
+margin: 0px;
+text-transform: capitalize;
+font-weight: bold;
+letter-spacing: 1px;
+color: #171717;
+padding-bottom: 8px;
+padding-top: 8px;
+font-family: 'gillsans_lightregular', Gill Sans MT;
+}
+.policy {
+    margin-top: 15px;
+}
+.poly {
+text-align: center;
+font-size: 28pt;
+margin: 0px;
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing: 1px;
+color: #505050;
+padding-bottom: 8px;
+font-family: "impactregular",Impact,Haettenschweiler,Franklin Gothic Bold,Arial Black,sans-serif;
+}
+.separator2{
+  background-color: #B30100;
+  height: 1px;
+  width: 80px;
+  margin: 2px 0px auto;
+  display: block;
+  position: relative;
+}
+.re-car {margin-top: 26px;}
+.re-car ul li {
+    line-height: 23px;
+    padding-bottom: 20px;
+    font-size: 16px;
+    color: #2F2F2F;
+    font-family: 'gillsans_lightregular', Gill Sans MT;
+}
+.re-car .fa{color: #B30100;}
+.policy ul li {
+    line-height: 23px;
+    padding-bottom: 20px;
+    font-size: 17px;
+    color: #2F2F2F;
+    font-family: 'gillsans_lightregular', Gill Sans MT;
+}
+.policy p{
+  line-height: 28px;
+    font-size: 17px;
+    color: #2F2F2F;
+    font-family: 'gillsans_lightregular', Gill Sans MT;
+}
+.age{margin-top: 20px;margin-bottom: 10px;}
+.policy .fa {color: #B30100;}
+.about-ex {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+}

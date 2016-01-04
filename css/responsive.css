@@ -1,0 +1,113 @@
+@charset "utf-8";
+/* CSS Document */
+@media (min-width: 1200px) and (max-width: 1920px)
+{.map{ width:50% !important; float:left;}.banner-contact{ height:440px;} .cars-banner{ height:400px;}
+.res{ padding:0 0 0 80px !important;}}
+@media (min-width: 768px) and (max-width: 1200px) {
+	.menu .navbar-nav > li {margin-right: 11px;}
+	.menu .navbar-default .navbar-nav > li > a {font-size:15px;}
+	.cal h1 {text-align:center;}
+	.exotic2{margin-bottom:10px;}
+	.vertical-border{border:none;}
+	.map{ width:50% !important; float:left;}.banner-contact{ height:440px;}.cars-banner{ height:400px;}
+	.res{ padding:0 0 0 80px !important;}
+	
+
+}
+@media (min-width: 320px) and (max-width: 767px) {
+.menu .navbar-header{background-color: rgb(255, 255, 255);}
+.menu .navbar-nav {margin-top:0; background-color: #B60100;}
+.menu .navbar-nav > li {margin-right: 0px;}
+.exotic h3 {font-size: 15pt;}
+.fot-h h3 {border:none;}
+.fot-cnt {border:none;}
+.new {border: none;}
+.head-line {display:none;}
+.lompo1 h3{font-size:30px;}
+.lompo1 p{line-height:20px;}
+.banner-block-img
+{
+	background-size:cover;
+	background-position:center;
+}
+.car-title-box{margin-bottom:10px;}
+.lompo1{
+	background:rgba(0,0,0,0.8);padding:30px;}
+.fot-cnt
+{
+	min-height:auto;
+	padding:10px;
+}
+.vertical-border{border:none;}
+.menu .navbar-default .navbar-nav > li > a{border-bottom: 4px solid #B60100}
+.cal h1{ margin: 0px 0px 0 20px !important;}
+.map{ width:100%;}
+.exotic3.btn-default{padding: 12px 34px;}
+.exo1 .btn-default{ font-size:14px !important;padding: 10px 16px !important;}
+.exo2 .btn-default{ font-size:14px !important; padding: 10px 16px !important;}
+.re-cars{margin-bottom: 20px;}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+.exotic h3 {font-size: 18pt;}
+.banner-block-img
+{
+	background-size:cover;
+	background-position:center;
+}
+.exo1 .btn-default{ font-size:14px !important;padding: 10px 16px !important;}
+.exo2 .btn-default{ font-size:14px !important;padding: 10px 16px !important;}
+.exotic3 .btn-default{font-size: 12pt !important;padding: 12px 14px !important;}
+}
+@media (min-width: 990px) and (max-width: 1199px){
+	.exo-int img {width: 407px;}
+	.banner-block-img
+{
+	background-size:cover;
+	background-position:center;
+}
+.map{ width:50%;}
+.drop-message{width:50%;}.banner-contact{ height:440px;}.cars-banner{ height:400px;}
+}
+@media (min-width: 768px) and (max-width: 990px){
+	.exo-int img {width: 304px;}
+	.head-line {margin-top: -202px;}
+	.input-append input{width: 82%;}
+}
+@media (min-width: 481px) and (max-width: 767px){
+	.exo-int img {width: 450px;top: -12px;right: -53px;}
+}
+@media (max-width: 480px){
+	.exo-int img {width: 385px;}
+}
+@media (min-width: 361px) and (max-width: 460px){
+	.exo-int img {width: 300px;}
+	
+}
+@media (max-width: 360px){
+	.exo-int img {
+    width: 285px;
+	top: 16px;
+	}
+	.exotic3 .btn-default{font-size: 12pt !important;padding: 12px 14px !important;}
+	.page-nation ul li a{padding: 7px 10px !important;}
+}
+@media (min-width: 320px) and (max-width: 359px){
+	.exo-int img {
+    width: 257px;
+    top: 19px;
+    left: -14px;}
+
+}
+@media (min-width: 768px){
+.padrgt0{padding-right:0;}
+.padlft0{padding-left:0;}
+.paddftl{padding-left:0;}
+}
+@media (min-width: 1200px){
+.padrgt0{padding-right:0;}
+.padlft0{padding-left:0;}
+.cal h1{ margin: 7px 0px 0 70px !important;}
+.input-append input{min-width: 89%;}
+}
+
+
