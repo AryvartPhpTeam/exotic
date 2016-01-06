@@ -11,6 +11,7 @@
 <link href="<?php echo get_template_directory_uri(); ?>/css/responsive.css" type="text/css" rel="stylesheet">
 <link href="<?php echo get_template_directory_uri(); ?>/css/stylesheet.css" rel="stylesheet" />
 <link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<?php wp_head(); ?>
 </head>
 <body>
 <section class="header-block">

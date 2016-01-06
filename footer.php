@@ -1,4 +1,4 @@
-<section class="footer-block">
+<section class="footer-block" style="margin-top:0px;">
 	<div class="footer-overlay">
 	<div class="container">
     	<div class="footer">
@@ -60,12 +60,14 @@
 	<p>Copyright &copy; <?php _e(date("Y")); ?> EXOTIC. All rights reserved.</p>	
 </section>
 </body>
+<?php
+wp_footer(); ?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.js"></script>
 <script type="text/javascript">
-$('.carousel').carousel({
-  interval: 1700
-})
+//$('.carousel').carousel({
+ // interval: 1700
+//})
 </script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap-datetimepicker.min.js"></script>
  <script type="text/javascript">
