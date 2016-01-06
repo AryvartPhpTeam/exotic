@@ -9,6 +9,8 @@
 <link href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.css" type="text/css" rel="stylesheet">
 <link href="<?php echo get_template_directory_uri(); ?>/css/style.css" type="text/css" rel="stylesheet">
 <link href="<?php echo get_template_directory_uri(); ?>/css/responsive.css" type="text/css" rel="stylesheet">
+<link href="<?php echo get_template_directory_uri(); ?>/css/stylesheet.css" rel="stylesheet" />
+<link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 </head>
 <body>
 <section class="header-block">
