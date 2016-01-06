@@ -169,6 +169,7 @@ function my_textbox_callback($args) {  // Textbox Callback
     $option = get_option($args[0]);
     echo '<input type="text" class="regular-text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
 }
+
 add_action('init', 'cars_register');
 function cars_register() {
     $args = array(
@@ -185,17 +186,29 @@ function cars_register() {
 add_action('admin_enqueue_scripts', 'hkdc_admin_scripts');
 function hkdc_post_money_field($post) {
      echo '<input type="text"  name="money" value="' . get_post_meta( $post->ID, 'money', true ) . '">';
+
 }
 function hkdc_post_money_meta_box() {
     add_meta_box('money', 'Rent per day', 'hkdc_post_money_field', 'cars', 'normal', 'default');
 }
 add_action('add_meta_boxes', 'hkdc_post_money_meta_box');
 add_action('save_post','save_post_money_meta');
+
+      
+}
+function hkdc_post_money_meta_box() {
+    add_meta_box('money', 'Rent per day', 'hkdc_post_money_field', 'cars', 'normal', 'default');
+
+}
+add_action('add_meta_boxes', 'hkdc_post_money_meta_box');
+add_action('save_post','save_post_money_meta');
+
 function save_post_money_meta($post_id, $post)
 {
     if(isset($_POST['money']))
     update_post_meta($post_id, 'money', $_POST['money']);
 }
+
 function slider_option() {
     $args = array(
         'public' => true,
@@ -206,3 +219,81 @@ function slider_option() {
     register_post_type( 'slider', $args );
 }
 add_action( 'init', 'slider_option' );
+
+
+
+
+ add_action('admin_enqueue_scripts', 'hkdc_admin_scripts');
+function hkdc_post_monthly_field($post) {
+     echo '<input type="text"  name="monthly" value="' . get_post_meta( $post->ID, 'monthly', true ) . '">';
+      
+}
+function hkdc_post_monthly_meta_box() {
+    add_meta_box('monthly', ' monthly', 'hkdc_post_monthly_field', 'cars', 'normal', 'default');
+
+}
+add_action('add_meta_boxes', 'hkdc_post_monthly_meta_box');
+add_action('save_post','save_post_monthly_meta');
+
+function save_post_monthly_meta($post_id, $post)
+{
+    if(isset($_POST['monthly']))
+    update_post_meta($post_id, 'monthly', $_POST['monthly']);
+}
+
+ add_action('admin_enqueue_scripts', 'hkdc_admin_scripts');
+function hkdc_post_weekly_field($post) {
+     echo '<input type="text"  name="weekly" value="' . get_post_meta( $post->ID, 'weekly', true ) . '">';
+      
+}
+function hkdc_post_weekly_meta_box() {
+    add_meta_box('weekly', 'weekly', 'hkdc_post_weekly_field', 'cars', 'normal', 'default');
+
+}
+add_action('add_meta_boxes', 'hkdc_post_weekly_meta_box');
+add_action('save_post','save_post_weekly_meta');
+
+function save_post_weekly_meta($post_id, $post)
+{
+    if(isset($_POST['weekly']))
+    update_post_meta($post_id, 'weekly', $_POST['weekly']);
+}
+ 
+
+if ( ! function_exists( 'my_pagination' ) ) :
+    function my_pagination() {
+        global $wp_query;
+
+        $big = 999999999; // need an unlikely integer
+        
+        echo paginate_links( array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, get_query_var('paged') ),
+            'total' => $wp_query->max_num_pages
+        ) );
+    }
+endif;
+
+add_action( 'init', 'create_book_tax' );
+
+function create_book_tax() {
+    register_taxonomy(
+        'carmodels',
+        'cars',
+        array(
+            'label' => __( 'Car models' ),
+            //'rewrite' => array( 'slug' => 'genre' ),
+            'hierarchical' => true,
+        )
+    );
+    register_taxonomy(
+        'carcategory',
+        'cars',
+        array(
+            'label' => __( 'Car category' ),
+            //'rewrite' => array( 'slug' => 'genre' ),
+            'hierarchical' => true,
+        )
+    );
+}
