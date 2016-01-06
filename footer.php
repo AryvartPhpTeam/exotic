@@ -67,4 +67,21 @@ $('.carousel').carousel({
   interval: 1700
 })
 </script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap-datetimepicker.min.js"></script>
+ <script type="text/javascript">
+        $(function () {
+          $('#datetimepicker1').datetimepicker({
+              pickTime: false
+            });
+          $('#datetimepicker2').datetimepicker({
+              pickTime: false
+            });
+            $('#datetimepicker3').datetimepicker({
+                pickDate: false
+            });             
+            $('#datetimepicker4').datetimepicker({
+                pickDate: false
+            });
+        });
+    </script>
 </html>
