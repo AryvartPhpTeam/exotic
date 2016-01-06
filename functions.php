@@ -1,5 +1,5 @@
 <?php
-
+include( get_template_directory() . '/includes/listtable.php');
 register_nav_menus( array(
 	'pluginbuddy_mobile' => 'PluginBuddy Mobile Navigation Menu',
 	'footer_menu' => 'My Custom Footer Menu',
@@ -183,31 +183,7 @@ function cars_register() {
     );
     register_post_type( 'cars' , $args );
 }
-add_action('admin_enqueue_scripts', 'hkdc_admin_scripts');
-function hkdc_post_money_field($post) {
-     echo '<input type="text"  name="money" value="' . get_post_meta( $post->ID, 'money', true ) . '">';
 
-}
-function hkdc_post_money_meta_box() {
-    add_meta_box('money', 'Rent per day', 'hkdc_post_money_field', 'cars', 'normal', 'default');
-}
-add_action('add_meta_boxes', 'hkdc_post_money_meta_box');
-add_action('save_post','save_post_money_meta');
-
-      
-}
-function hkdc_post_money_meta_box() {
-    add_meta_box('money', 'Rent per day', 'hkdc_post_money_field', 'cars', 'normal', 'default');
-
-}
-add_action('add_meta_boxes', 'hkdc_post_money_meta_box');
-add_action('save_post','save_post_money_meta');
-
-function save_post_money_meta($post_id, $post)
-{
-    if(isset($_POST['money']))
-    update_post_meta($post_id, 'money', $_POST['money']);
-}
 
 function slider_option() {
     $args = array(
@@ -222,43 +198,96 @@ add_action( 'init', 'slider_option' );
 
 
 
+function myplugin_add_meta_box() {
+            add_meta_box('post_car_details', __('Car Details', 'myplugin_textdomain'), 'myplugin_meta_box_callback', 'cars');
+        }
 
- add_action('admin_enqueue_scripts', 'hkdc_admin_scripts');
-function hkdc_post_monthly_field($post) {
-     echo '<input type="text"  name="monthly" value="' . get_post_meta( $post->ID, 'monthly', true ) . '">';
-      
-}
-function hkdc_post_monthly_meta_box() {
-    add_meta_box('monthly', ' monthly', 'hkdc_post_monthly_field', 'cars', 'normal', 'default');
+        add_action('add_meta_boxes', 'myplugin_add_meta_box');
+        add_action('save_post', 'save');
 
-}
-add_action('add_meta_boxes', 'hkdc_post_monthly_meta_box');
-add_action('save_post','save_post_monthly_meta');
+        function myplugin_meta_box_callback($post) {
 
-function save_post_monthly_meta($post_id, $post)
-{
-    if(isset($_POST['monthly']))
-    update_post_meta($post_id, 'monthly', $_POST['monthly']);
-}
+            $car_details = get_post_meta($post->ID, 'car_details', true);
+            // print_r( $car_details );
+            ?>
+            <div class="wrap">
+                <h1>Car Details</h1>
+             
+                    <table class="form-table">
+                        <tbody>
 
- add_action('admin_enqueue_scripts', 'hkdc_admin_scripts');
-function hkdc_post_weekly_field($post) {
-     echo '<input type="text"  name="weekly" value="' . get_post_meta( $post->ID, 'weekly', true ) . '">';
-      
-}
-function hkdc_post_weekly_meta_box() {
-    add_meta_box('weekly', 'weekly', 'hkdc_post_weekly_field', 'cars', 'normal', 'default');
+                            <tr>
+                                <th scope="row"><label for="blogname">Featured Inner page Image</label></th>
+                                <td>
+                                    <?php if (isset($car_details['featured_image'])) { ?>
+                                    <img src="<?php echo $car_details['featured_image']; ?>" width="150" height="150"/> <br />
+                                   <?php } ?>
+                            <input type="file" class="regular-text"  id="blogname" name="featured_image">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th scope="row"><label for="blogname">Make</label></th>
+                                <td><input type="text" class="regular-text" value="<?php echo isset($car_details['make']) ? $car_details['make'] : ''; ?>" id="blogname" name="car_details[make]"></td>
+                            </tr>
 
-}
-add_action('add_meta_boxes', 'hkdc_post_weekly_meta_box');
-add_action('save_post','save_post_weekly_meta');
+                            <tr>
+                                <th scope="row"><label for="blogname">Model Year</label></th>
+                                <td><input type="text" class="regular-text" value="<?php echo isset($car_details['model_year']) ? $car_details['model_year'] : ''; ?>" id="blogname" name="car_details[model_year]"></td>
+                            </tr>   
+                            <tr>
+                                <th scope="row"><label for="blogname">Car Type</label></th>
+                                <td><input type="text" class="regular-text" value="<?php echo isset($car_details['car_type']) ? $car_details['car_type'] : ''; ?>" id="blogname" name="car_details[car_type]"></td>
+                            </tr>   
+                            <tr>
+                                <th scope="row"><label for="blogname"><h1>Car Rental Prices</h1></label></th>
+                                <td></td>
+                            </tr>   
+                            <tr>
+                                <th scope="row"><label for="blogname">Daily</label></th>
+                                <td><input type="text" class="regular-text" value="<?php echo isset($car_details['rent_daily']) ? $car_details['rent_daily'] : ''; ?>" id="blogname" name="car_details[rent_daily]"></td>
+                            </tr>  
+                            <tr>
+                                <th scope="row"><label for="blogname">Weekly</label></th>
+                                <td><input type="text" class="regular-text" value="<?php echo isset($car_details['rent_weekly']) ? $car_details['rent_weekly'] : ''; ?>" id="blogname" name="car_details[rent_weekly]"></td>
+                            </tr> 
+                            <tr>
+                                <th scope="row"><label for="blogname">Monthly</label></th>
+                                <td><input type="text" class="regular-text" value="<?php echo isset($car_details['rent_monthly']) ? $car_details['rent_monthly'] : ''; ?>" id="blogname" name="car_details[rent_monthly]"></td>
+                            </tr> 
+                            <tr>
+                                <th scope="row"><label for="blogname">Rental Mileage </label></th>
+                                <td><input type="text" class="regular-text" value="<?php echo isset($car_details['rent_mileage']) ? $car_details['rent_mileage'] : ''; ?>" id="blogname" name="car_details[rent_mileage]"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="blogname">Video URL</label></th>
+                                <td><input type="text" class="regular-text" value="<?php echo isset($car_details['video_url']) ? $car_details['video_url'] : ''; ?>" id="blogname" name="car_details[video_url]"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <?php //echo submit_button(); ?>
+               
+                <?php
+            }
 
-function save_post_weekly_meta($post_id, $post)
-{
-    if(isset($_POST['weekly']))
-    update_post_meta($post_id, 'weekly', $_POST['weekly']);
-}
- 
+            function save($post_id) {
+
+                $uploadedfile = $_FILES['featured_image'];
+
+        $upload_overrides = array('test_form' => false);
+
+        $movefile = wp_handle_upload($uploadedfile, $upload_overrides);
+        $car_details = get_post_meta($post_id, 'car_details', true);
+        if ($movefile && !isset($movefile['error'])) {
+                $_POST['car_details']['featured_image'] = $movefile['url'];
+        }
+        elseif (isset($car_details['featured_image'])) {
+            $_POST['car_details']['featured_image'] = $car_details['featured_image'];
+        } 
+        
+                // $_POST['additional_option']['author_quotes'] = nl2br($_POST['exotic_contact']['author_quotes']);
+                update_post_meta($post_id, 'car_details', $_POST['car_details']);
+            } 
 
 if ( ! function_exists( 'my_pagination' ) ) :
     function my_pagination() {
@@ -296,4 +325,23 @@ function create_book_tax() {
             'hierarchical' => true,
         )
     );
+}
+add_action('admin_menu', 'exotic_reservation');
+
+function exotic_reservation() {
+    add_menu_page('Reservation', 'Reservation', 'manage_options', 'exotic1', 'my_reservations1', '', 7);
+
+}
+function my_reservations1()
+{
+            ?>
+<form method="post">
+            <?php
+            $endosersTable = new ReservationTable();
+            $endosersTable->prepare_items();
+            $endosersTable->display();
+           
+?>
+</form>
+<?php
 }

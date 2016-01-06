@@ -30,7 +30,14 @@
 	<div class="container">
     	<h1>Featured</h1>
         <?php 
-      $car_cat = get_posts(array('post_type' => 'cars'));
+      $car_cat = get_posts(array('post_type' => 'cars',  'posts_per_page' => 12 ,'tax_query' => array(
+        array(
+            'taxonomy' => 'carcategory',
+            'terms' => 6,
+            'field' => 'id',
+        )
+        ))); 
+
       foreach($car_cat as $res){
         $image = wp_get_attachment_image_src( get_post_thumbnail_id( $res->ID ), 'single-post-thumbnail' );
         $money=get_post_meta( $res->ID, 'money', true );

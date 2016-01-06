@@ -15,7 +15,7 @@ get_header();
         <input type="text" class="form-control cr-box" placeholder="CATEGORIES">
         </div>
          <div class="col-lg-4 col-md-4 col-sm-4 col-sx-12">
-        <input type="text" class="form-control cr-box" placeholder="">
+        <input type="text" class="form-control cr-box" placeholder="CAR MODELS">
         </div>
          <div class="col-lg-4 col-md-4 col-sm-4 col-sx-12">
         <div class="clearfix"></div>
@@ -35,10 +35,10 @@ get_header();
 <div class="container">
 <div class="row cars-model cars-model1">
 	<?php 
-      $paged = $paged ? $paged : 1;
+       $paged = $paged ? $paged : 1;
       $posts_per_page = 3;
       $offset = ($paged - 1) * $posts_per_page;
-      $query =  query_posts( array( 'posts_per_page' => 3, 'offset'=> $offset, 'post_type' => 'cars', 'category' => 'carcategory') );
+      $query =  query_posts( array( 'posts_per_page' => 3, 'offset'=> $offset, 'post_type' => 'cars') );
              while ( have_posts() ) : the_post();
 
                 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
@@ -51,8 +51,8 @@ get_header();
 <h2><?php _e($post->post_title);?></h2>
 <hr class="ht-border"> 
 <img src="<?php _e($image[0]);?>" class="img-responsive text-center"> 
-<span>$<?php _e($money); ?>A DAY</span><span class="exotic1 res"><a href="" class="btn btn-default">RESERVATION</a></span>
-<p><?php _e($post->post_content);?></p>
+<span>$<?php _e($money); ?>A DAY</span><span class="exotic1 res"><a href="<?php _e(get_permalink(7));?>" class="btn btn-default">RESERVATION</a></span>
+<p><?php _e(substr($post->post_content,0,150));?></p>
 <p class="re-mo"><a href="<?php _e(get_permalink($post->ID));?>">Read More</a></p>
 </div>
 </div>
@@ -68,6 +68,7 @@ get_header();
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 <div class="page-nation">
 <ul>
+<li>
 	<?php
 global $wp_query;
 $big = 999999999; // need an unlikely integer
@@ -79,6 +80,7 @@ echo paginate_links( array(
 	'total' => $wp_query->max_num_pages
 ) );
 ?>
+</li>
 </ul>
 </div>
 </div>
@@ -92,15 +94,14 @@ echo paginate_links( array(
 <h2>GET STARTED NOW AND IMPROVE YOUR CAR RENTAL</h2>
 </div>
 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 exo1">
-<a href="" class="btn btn-default">READ MORE</a>
+<a href="<?php _e(get_permalink($post->ID));?>" class="btn btn-default">READ MORE</a>
 </div>
 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 exo2">
-<a href="" class="btn btn-default">RESERVATION</a>
+<a href="<?php _e(get_permalink(7));?>" class="btn btn-default">RESERVATION</a>
 </div>
 </div>
 </div>
 </section>
-
 <?php
 get_footer();
 ?>
