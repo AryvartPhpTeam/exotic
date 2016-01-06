@@ -38,7 +38,7 @@
             </nav>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12 cal">
-            	<h1>800.090.0980</h1>
+            	<h1><?php echo get_option('phone'); ?></h1>
             </div>
          </div>
        </div>

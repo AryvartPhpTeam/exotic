@@ -2,9 +2,15 @@
 <section class="banner-block">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/banner01.jpg" class="img-responsive"/>
+        <?php $i=0; 
+      $slider = get_posts(array('post_type' => 'slider'));
+      foreach($slider as $res){
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $res->ID ), 'single-post-thumbnail' );
+      ?>
+        <div class="item <?php if($i==0) {?>active <?php } ?>">
+          <img src="<?php _e($image[0]); ?>" class="img-responsive"/>
         </div>
+        <?php $i++; } ?>
         <!--<div class="item">
           <img src="images/banner02.jpg" class="img-responsive"/>
         </div>
@@ -23,124 +29,23 @@
 <section class="feature">
 	<div class="container">
     	<h1>Featured</h1>
+        <?php 
+      $car_cat = get_posts(array('post_type' => 'cars'));
+      foreach($car_cat as $res){
+        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $res->ID ), 'single-post-thumbnail' );
+        $money=get_post_meta( $res->ID, 'money', true );
+      ?>
      	<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
         	<div class="exotic">
-             <h3><a href="#">Lamborghini Aventador</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
+             <h3><a href="<?php _e(get_permalink($res->ID));?>"><?php _e($res->post_title);?></a></h3>
+             <h4>$<?php _e($money); ?> A day</h4>
+             <a href="<?php _e(get_permalink(7));?>" class="btn btn-default">reservation</a>
              <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic06.png"></a>
+              <a href="<?php _e(get_permalink($res->ID));?>"><img src="<?php _e($image[0]); ?>"></a>
              </div>
             </div>
          </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">rolls royce phantom</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic02.png"></a>
-             </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">PORSCHE PANAMERA</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic03.png"></a>
-             </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">ferrari</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic04.png"></a>
-             </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">PORSCHE PANAMERA</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic05.png"></a>
-             </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">Lamborghini Aventador</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic06.png"></a>
-             </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">rolls royce phantom</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic07.png"></a>
-             </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">ferrari</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic04.png"></a>
-             </div>
-            </div>
-         </div><div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">PORSCHE PANAMERA</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic05.png"></a>
-             </div>
-            </div>
-         </div><div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">Lamborghini Aventador</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic06.png"></a>
-             </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">rolls royce phantom</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic02.png"></a>
-             </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-        	<div class="exotic">
-             <h3><a href="#">PORSCHE PANAMERA</a></h3>
-             <h4>$1500 A day</h4>
-             <a href="#" class="btn btn-default">reservation</a>
-             <div class="exo-int">
-              <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/exotic03.png"></a>
-             </div>
-            </div>
-         </div>
+         <?php } ?>
 	</div>    
 </section>
 <?php get_footer(); ?>
