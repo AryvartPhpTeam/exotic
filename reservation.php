@@ -9,6 +9,14 @@ get_header();
           <h2 class="vation">reservation</h2>
           <div class="separator2"></div>
           <div class="row martop20">
+          <?php
+ global $wpdb;
+    if (isset($_POST['submit'])) {
+
+       $wpdb->insert( 'reservation', $_POST[resevation] , '' );
+    }
+          ?>
+          <form>
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <select class="form-control" name="car model" id="type">
                 <option class="selected">----Car Models----</option>

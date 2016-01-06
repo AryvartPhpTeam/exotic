@@ -182,7 +182,7 @@ function cars_register() {
     );
     register_post_type( 'cars' , $args );
 }
-add_action('admin_enqueue_scripts', 'hkdc_admin_scripts');
+
 function hkdc_post_money_field($post) {
      echo '<input type="text"  name="money" value="' . get_post_meta( $post->ID, 'money', true ) . '">';
 }
